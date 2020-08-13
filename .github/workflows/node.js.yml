@@ -19,6 +19,6 @@ jobs:
         if: success()
         run: echo "The previous step has finished successfully"
       - name: my third step
-        uses: action/checkout@v1
+        uses: actions/checkout@v1
         with:
           node-version: 12
