@@ -15,3 +15,6 @@ jobs:
           FIRST_NAME: Chun
           LAST_NAME: Ly
         run: echo $MY_VAR $FIRST_NAME $LAST_NAME
+      - name: my second step
+        if: success()
+        run: echo "The previous step has finished successfully"
