@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-  runs-on: ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         node: [12]
@@ -22,5 +22,4 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node }}
-    - run: npm install
     - run: npm test
