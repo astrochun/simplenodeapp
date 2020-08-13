@@ -1,22 +1,17 @@
 name: build
-on: 
-  push:
-    paths:
-      - '**.js'
+on: push
 jobs:
   build:
     name: my job
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
-        node: [10, 12, 14]
-        exclude:
-          - os: macos-latest
-            node: 10
+        os: [ubuntu-latest]
+        node: [12, 14]
     steps:
-      - uses: actions/checkout@v2
-      - name: Use node.js ${{ matrix.node }}
-        uses: actions/setup-node@v1
-        with:
-          node: ${{ matrix.node }}
+      - name: my first step
+        env:
+          MY_VAR: Hi there! my name is
+          FIRST_NAME: Chun
+          LAST_NAME: Ly
+        run: echo $MY_VAR $FIRST_NAME $LAST_NAME
